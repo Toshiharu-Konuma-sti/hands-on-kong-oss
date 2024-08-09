@@ -1,0 +1,9 @@
+{
+  "name": "rt-yjrss-cancam",
+  "service": {
+    "name": "sv-yjrss-cancam"
+  },
+  "paths": [
+    "/yjrss/cancam/"
+  ]
+}

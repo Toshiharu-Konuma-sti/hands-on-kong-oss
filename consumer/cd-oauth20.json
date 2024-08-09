@@ -1,0 +1,9 @@
+{
+  "name": "my-app-001",
+  "redirect_uris": [
+    "http://localhost:8000/",
+    "https://www.yahoo.co.jp/"
+  ],
+  "client_id": "my-client-id",
+  "client_secret": "my-client-secret"
+}

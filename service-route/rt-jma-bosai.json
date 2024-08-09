@@ -1,0 +1,9 @@
+{
+  "name": "rt-jma-bosai",
+  "service": {
+    "name": "sv-jma-bosai"
+  },
+  "paths": [
+    "/jma-bosai/"
+  ]
+}

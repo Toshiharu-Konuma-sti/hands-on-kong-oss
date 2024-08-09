@@ -1,0 +1,10 @@
+{
+  "name": "oauth2",
+  "route": {
+    "name": "rt-yjrss-cnetj"
+  },
+  "config": {
+    "enable_authorization_code": true,
+    "provision_key": "my-provision-key"
+  }
+}
