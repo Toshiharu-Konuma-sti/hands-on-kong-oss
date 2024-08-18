@@ -6,9 +6,9 @@ services:
     container_name: kong-database
     image: postgres:13
     environment:
-      POSTGRES_USER: kong
-      POSTGRES_DB: kong
-      POSTGRES_PASSWORD: kongpass
+      POSTGRES_DB: ${PG_DB}
+      POSTGRES_USER: ${PG_USER}
+      POSTGRES_PASSWORD: ${PG_PASS}
     networks:
       - knet
     healthcheck:
@@ -21,9 +21,9 @@ services:
     image: kong:3.7.1
     command: /bin/sh -c 'kong migrations bootstrap'
     environment:
-      KONG_DATABASE: postgres
-      KONG_PG_HOST: kong-database
-      KONG_PG_PASSWORD: kongpass
+      KONG_DATABASE: ${DB_TYPE}
+      KONG_PG_HOST: ${PG_HOST}
+      KONG_PG_PASSWORD: ${PG_PASS}
     networks:
       - knet
     depends_on:
@@ -34,10 +34,10 @@ services:
     container_name: kong-gateway
     image: kong:3.7.1
     environment:
-      KONG_DATABASE: postgres
-      KONG_PG_HOST: kong-database
-      KONG_PG_USER: kong
-      KONG_PG_PASSWORD: kongpass
+      KONG_DATABASE: ${DB_TYPE}
+      KONG_PG_HOST: ${PG_HOST}
+      KONG_PG_USER: ${PG_USER}
+      KONG_PG_PASSWORD: ${PG_PASS}
       KONG_PROXY_ACCESS_LOG: /dev/stdout
       KONG_ADMIN_ACCESS_LOG: /dev/stdout
       KONG_PROXY_ERROR_LOG: /dev/stderr
