@@ -19,24 +19,20 @@ services:
   migration:
     container_name: kong-migration
     image: kong:3.7.1
-    depends_on:
-      database:
-        condition: service_healthy
+    command: /bin/sh -c 'kong migrations bootstrap'
     environment:
       KONG_DATABASE: postgres
       KONG_PG_HOST: kong-database
       KONG_PG_PASSWORD: kongpass
     networks:
       - knet
-    command: /bin/sh -c 'kong migrations bootstrap'
+    depends_on:
+      database:
+        condition: service_healthy
 
   gateway:
     container_name: kong-gateway
     image: kong:3.7.1
-    restart: always
-    depends_on:
-      database:
-        condition: service_healthy
     environment:
       KONG_DATABASE: postgres
       KONG_PG_HOST: kong-database
@@ -56,6 +52,10 @@ services:
       - 127.0.0.1:8444:8444
     networks:
       - knet
+    restart: always
+    depends_on:
+      database:
+        condition: service_healthy
 
   ups-webapi:
     container_name: kong-ups-webapi
