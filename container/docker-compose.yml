@@ -57,11 +57,11 @@ services:
       database:
         condition: service_healthy
 
-  ups-webapi:
-    container_name: kong-ups-webapi
+  ups-web:
+    container_name: kong-ups-web
     image: httpd:2.4
     volumes:
-      - ./ups-webapi/htdocs:/usr/local/apache2/htdocs
+      - ./ups-web/htdocs:/usr/local/apache2/htdocs
     ports:
       - 8090:80
     networks:
