@@ -1,0 +1,9 @@
+{
+  "name": "rate-limiting",
+  "route": {
+    "name": "rt-local-smpl"
+  },
+  "config": {
+    "minute": 5
+  }
+}

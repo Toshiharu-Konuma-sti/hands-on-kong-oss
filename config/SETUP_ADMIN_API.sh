@@ -13,7 +13,7 @@ call_curl_post_ptrn_files()
 	done
 }
 
-call_curl_post_plugin_files()
+call_curl_post_credential_files()
 {
 	for PATHFILE in $PWD$1; do
 		PG_NAME=`echo $PATHFILE | sed -e 's/.*\/cd-//' -e 's/\.json$//'`
@@ -34,7 +34,7 @@ PTN_SV=/service-route/sv-*.json
 URI_SV=services
 PTN_RT=/service-route/rt-*.json
 URI_RT=routes
-PTN_PG=/plugin-auth/pg-*.json
+PTN_PG=/plugin/pg-*.json
 URI_PG=plugins
 PTN_CN=/consumer/consumer.json
 URI_CN=consumers
@@ -46,6 +46,6 @@ call_curl_post_ptrn_files $PTN_SV $URI_SV
 call_curl_post_ptrn_files $PTN_RT $URI_RT
 call_curl_post_ptrn_files $PTN_PG $URI_PG
 call_curl_post_ptrn_files $PTN_CN $URI_CN
-call_curl_post_plugin_files $PTN_CD $URI_CD $USERNM
+call_curl_post_credential_files $PTN_CD $URI_CD $USERNM
 
 echo "\n####################\n### FINISH\n####################"
