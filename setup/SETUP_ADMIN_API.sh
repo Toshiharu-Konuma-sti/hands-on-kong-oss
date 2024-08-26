@@ -30,9 +30,9 @@ call_curl_post_credential_files()
 
 echo "####################\n### START\n####################"
 
-PTN_SV=/service-route/sv-*.json
+PTN_SV=/service/sv-*.json
 URI_SV=services
-PTN_RT=/service-route/rt-*.json
+PTN_RT=/route/rt-*.json
 URI_RT=routes
 PTN_PG=/plugin/pg-*.json
 URI_PG=plugins
