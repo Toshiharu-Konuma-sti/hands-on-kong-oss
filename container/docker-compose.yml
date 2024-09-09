@@ -14,7 +14,7 @@ services:
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres}"]
       interval: 5s
-      retries: 3
+      retries: 36
 
   migration:
     container_name: kong-migration
