@@ -4,6 +4,6 @@
     "name": "sv-sios-cp-msg"
   },
   "paths": [
-    "/sios-cp-msg/"
+    "/sios-cp-msg"
   ]
 }
