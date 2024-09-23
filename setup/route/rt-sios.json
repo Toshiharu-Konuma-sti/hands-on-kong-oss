@@ -1,0 +1,9 @@
+{
+  "name": "rt-sios",
+  "service": {
+    "name": "sv-sios"
+  },
+  "paths": [
+    "/sios/"
+  ]
+}

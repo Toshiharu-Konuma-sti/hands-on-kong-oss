@@ -1,0 +1,9 @@
+{
+  "name": "rt-sios-st-dei",
+  "service": {
+    "name": "sv-sios-st-dei"
+  },
+  "paths": [
+    "/sios-st-dei/"
+  ]
+}

@@ -10,7 +10,7 @@ services:
       POSTGRES_USER: ${PG_USER}
       POSTGRES_PASSWORD: ${PG_PASS}
     networks:
-      - hnet
+      - internal
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres}"]
       interval: 5s
@@ -25,7 +25,7 @@ services:
       KONG_PG_HOST: ${PG_HOST}
       KONG_PG_PASSWORD: ${PG_PASS}
     networks:
-      - hnet
+      - internal
     depends_on:
       database:
         condition: service_healthy
@@ -51,7 +51,8 @@ services:
       - 127.0.0.1:8002:8002
       - 127.0.0.1:8444:8444
     networks:
-      - hnet
+      - internal
+      - external
     restart: always
     depends_on:
       database:
@@ -65,9 +66,13 @@ services:
     ports:
       - 8090:80
     networks:
-      - hnet
+      - internal
 
 networks:
-  hnet:
+  internal:
+    name: intra-net
+    driver: bridge
+    internal: true
+  external:
     name: hands-net
     driver: bridge

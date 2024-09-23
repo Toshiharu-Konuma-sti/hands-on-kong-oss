@@ -1,0 +1,9 @@
+{
+  "name": "rt-sios-cp-msg",
+  "service": {
+    "name": "sv-sios-cp-msg"
+  },
+  "paths": [
+    "/sios-cp-msg/"
+  ]
+}
