@@ -44,6 +44,9 @@ services:
       KONG_ADMIN_ERROR_LOG: /dev/stderr
       KONG_ADMIN_LISTEN: 0.0.0.0:8001, 0.0.0.0:8444 ssl
       KONG_ADMIN_GUI_URL: http://localhost:8002
+      KONG_PLUGINS: bundled,my-1st-plugin
+    volumes:
+      - ../development/plugin/my-1st-plugin/kong/plugins/my-1st-plugin/:/usr/local/share/lua/5.1/kong/plugins/my-1st-plugin
     ports:
       - 8000:8000
       - 8443:8443
