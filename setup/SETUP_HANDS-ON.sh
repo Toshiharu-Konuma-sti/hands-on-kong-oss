@@ -1,8 +1,15 @@
 #!/bin/sh
 
+me_script_dir()
+{
+	CDIR=$(cd $(dirname $0); pwd)
+	echo "$CDIR"
+}
+
 call_curl_post_ptrn_files()
 {
-	for PATHFILE in $PWD$1; do
+	CDIR=$(me_script_dir)
+	for PATHFILE in $CDIR$1; do
 		API_URL=http://localhost:8001/$2
 		echo "\n--------------------------------------------------"
 		echo $PATHFILE
@@ -15,7 +22,8 @@ call_curl_post_ptrn_files()
 
 call_curl_post_credential_files()
 {
-	for PATHFILE in $PWD$1; do
+	CDIR=$(me_script_dir)
+	for PATHFILE in $CDIR$1; do
 		PG_NAME=`echo $PATHFILE | sed -e 's/.*\/cd-//' -e 's/\.json$//'`
 		API_URL=http://localhost:8001/$2/$3/$PG_NAME
 		echo "\n--------------------------------------------------"
