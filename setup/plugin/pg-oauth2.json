@@ -5,6 +5,13 @@
   },
   "config": {
     "enable_authorization_code": true,
-    "provision_key": "my-provision-key"
+    "provision_key": "my-provision-key",
+    "mandatory_scope": true,
+    "scopes": [
+      "read:baseball.player",
+      "read:baseball.manager",
+      "read:soccer.player",
+      "read:soccer.manager"
+    ]
   }
 }
