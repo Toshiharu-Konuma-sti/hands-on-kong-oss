@@ -1,0 +1,15 @@
+{
+  "name": "oauth2",
+  "route": {
+    "name": "rt-yjrss-dhbrn"
+  },
+  "config": {
+    "enable_client_credentials": true,
+    "provision_key": "my-provision-key",
+    "mandatory_scope": true,
+    "scopes": [
+      "read:baseball.player",
+      "read:soccer.player"
+    ]
+  }
+}

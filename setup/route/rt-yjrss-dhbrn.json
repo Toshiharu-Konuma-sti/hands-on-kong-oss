@@ -1,0 +1,9 @@
+{
+  "name": "rt-yjrss-dhbrn",
+  "service": {
+    "name": "sv-yjrss-dhbrn"
+  },
+  "paths": [
+    "/yjrss/dhbrn"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "rt-yjrss-dazn",
+  "service": {
+    "name": "sv-yjrss-dazn"
+  },
+  "paths": [
+    "/yjrss/dazn"
+  ]
+}

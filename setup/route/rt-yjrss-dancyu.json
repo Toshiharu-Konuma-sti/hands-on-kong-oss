@@ -1,0 +1,9 @@
+{
+  "name": "rt-yjrss-dancyu",
+  "service": {
+    "name": "sv-yjrss-dancyu"
+  },
+  "paths": [
+    "/yjrss/dancyu"
+  ]
+}

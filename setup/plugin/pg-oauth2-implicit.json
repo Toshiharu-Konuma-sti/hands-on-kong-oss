@@ -1,0 +1,15 @@
+{
+  "name": "oauth2",
+  "route": {
+    "name": "rt-yjrss-dancyu"
+  },
+  "config": {
+    "enable_implicit_grant": true,
+    "provision_key": "my-provision-key",
+    "mandatory_scope": true,
+    "scopes": [
+      "read:baseball.player",
+      "read:soccer.player"
+    ]
+  }
+}
